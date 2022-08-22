@@ -35,6 +35,12 @@ It will output merged records in three different views
 Four records endpoints are created for creating / reading user records.
 
 - POST: http://localhost:3000/records - stores user record in memory
+```json
+Body
+{
+  "record": "Fogel | Mike | MALE | Yello | 12-09-1980"
+}
+```
 - GET: http://localhost:3000/records/gender - returns user records sorted by gender
 - GET: http://localhost:3000/records/birthdate - returns user records sorted by birthdate
 - GET: http://localhost:3000/records/name - returns user records sorted by last name

@@ -1,7 +1,13 @@
 import { Module } from '@nestjs/common';
+import { RouterModule } from 'nest-router';
+import { RecordsModule } from './records/records.module';
+import { routes } from './routes';
 
 @Module({
-  imports: [],
+  imports: [
+    RouterModule.forRoutes(routes),
+    RecordsModule,
+  ],
   controllers: [],
   providers: [],
 })

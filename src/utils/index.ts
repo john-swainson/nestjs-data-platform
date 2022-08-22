@@ -1,4 +1,4 @@
-export * from './encode-record';
-export * from './files';
-export * from './parse-record';
-export * from './sort';
+export { encodeRecord } from './encode-record';
+export { readRecordFile } from './files';
+export { parseRecord } from './parse-record';
+export { sortRecords } from './sort';

@@ -1,5 +1,5 @@
 import * as prompt from 'prompt';
-import { Logger } from '@nestjs/common';
+import { readRecordFile } from './utils';
 
 export class PromptService {
   private promptSchema = {
@@ -16,11 +16,13 @@ export class PromptService {
   /**
    * Get prompt, input files
    */
-  getPrompt() {
+  async getPrompt() {
     prompt.start();
     prompt.get(this.promptSchema, (err, result) => {
-      const fileNames = result.files.toString().split(' ');
-      console.log(fileNames)
+      const filenames = result.files.toString().split(' ');
+      Promise.all(filenames.map(async (filename) => {
+        await readRecordFile(filename);
+      }));
     });
   }
 }

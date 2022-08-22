@@ -7,6 +7,6 @@ async function bootstrap() {
   await app.listen(3001);
 
   const prompt = new PromptService();
-  prompt.getPrompt();
+  await prompt.getPrompt();
 }
 bootstrap();

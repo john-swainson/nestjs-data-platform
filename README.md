@@ -1,14 +1,6 @@
-# test-valstro-socket-backend
+# nestjs-data-platform-test
 
 ## Description
-
-As a member of the Valstro Engineering team, interacting with event-driven APIs is a task that comes up often. The purpose of this assessment is to show that you can interact with a simple Websocket API(implemented with Socket.io v4.
-
-## Run docker container
-
-```bash
-$ docker run -p 3000:3000 clonardo/socketio-backend
-```
 
 ## Installation
 
@@ -17,8 +9,6 @@ $ yarn
 ```
 
 ## Running the app
-
-Make sure you are running socket.io backend before running app.
 
 ```bash
 # development

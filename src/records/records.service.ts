@@ -5,7 +5,7 @@ import { RecordDto } from './dto/record.dto';
 
 @Injectable()
 export class RecordsService {
-  private records: Array<UserRecord>;
+  public records: Array<UserRecord>;
   constructor() {
     this.records = [];
   }
@@ -13,8 +13,12 @@ export class RecordsService {
   public createRecord(record: string): RecordDto {
     const userRecord = parseRecord(record);
     this.records = [...this.records, userRecord];
+  
     return {
-      ...userRecord,
+      firstName: userRecord.firstName,
+      lastName: userRecord.lastName,
+      favoriteColor: userRecord.favoriteColor,
+      gender: userRecord.gender,
       dateOfBirth: userRecord.dob.toLocaleDateString("en-US"),
     };
   }
@@ -37,7 +41,10 @@ export class RecordsService {
 
   public mapRecordResult(records: Array<UserRecord>): Array<RecordDto> {
     return records.map((record) => ({
-      ...record,
+      firstName: record.firstName,
+      lastName: record.lastName,
+      favoriteColor: record.favoriteColor,
+      gender: record.gender,
       dateOfBirth: record.dob.toLocaleDateString("en-US"),
     }));
   }
